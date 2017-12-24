@@ -1,19 +1,8 @@
-title: LINE Messaging API
-speaker: Tony Yang
-<!-- url:  -->
-transition: slide3
-<!-- files: /js/zoom.js -->
-theme: moon
-usemathjax: yes
-
-[slide]
 # 使用Python Flask 撰寫 Line Bot 
 <small style="vertical-align:middle;display:inline-block"><iframe src="http://ghbtns.com/github-btn.html?user=tonyyang924&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="20" style="width:170px;height:20px;  background-color: transparent;"></iframe></small>
 
-[slide]
 # 環境安裝
 
-[slide]
 ## Install Python & SDK & dependency 
 ----
 * Python Install
@@ -26,11 +15,10 @@ usemathjax: yes
 <pre><code class="markdown">wget https://raw.githubusercontent.com/tonyyang924/mudhorse-line-bot/master/requirements.txt
 pip install -r requirements.txt</code></pre>
 
-[slide]
+
 # 撰寫Python後端程式
 
-[slide]
-## Code(1)
+## Code
 <pre><code class="python">
 import os
 from flask import Flask, request, abort
@@ -44,11 +32,7 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
-</code></pre>
 
-[slide]
-## Code(2)
-<pre><code class="python">
 app = Flask(__name__)
 
 # get channel_secret and channel_access_token from your environment variable
@@ -63,11 +47,7 @@ if channel_access_token is None:
 
 line_bot_api = LineBotApi(channel_access_token)
 handler = WebhookHandler(channel_secret)
-</code></pre>
 
-[slide]
-## Code(3)
-<pre><code class="python">
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -86,8 +66,6 @@ def callback():
     return 'OK'
 </code></pre>
 
-[slide]
-## Code(3)
 <pre><code class="python">
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
@@ -100,15 +78,12 @@ if __name__ == "__main__":
     app.run()
 </code></pre>
 
-[slide]
 # Deploy to Heroku
 
-[slide]
 ## Prerequisites: Installing Git and the Heroku CLI
 * [Git installation instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Heroku CLI installation instructions](https://devcenter.heroku.com/articles/heroku-cli)
 
-[slide]
 ## Tracking your app in Git
 <pre><code class="terminal">
 $ mkdir LineBotSample
@@ -120,7 +95,6 @@ $ git add .
 $ git commit -m "first commit"
 </code></pre>
 
-[slide]
 ## Creating a Heroku remote
 <pre><code class="terminal">
 $ heroku create line-bot-sample-1220
@@ -131,8 +105,7 @@ heroku	https://git.heroku.com/line-bot-sample-1220.git (fetch)
 heroku	https://git.heroku.com/line-bot-sample-1220.git (push)
 </code></pre>
 
-[slide]
-## Deploying code (1)
+## Deploying code
 <pre><code class="terminal">
 $ git push heroku master
 Counting objects: 3, done.
@@ -145,11 +118,6 @@ remote: Building source:
 remote:
 remote: -----> Python app detected
 ....
-</code></pre>
-
-[slide]
-## Deploying code (2)
-<pre><code class="terminal">
 remote:
 remote: -----> Discovering process types
 remote:        Procfile declares types -> (none)
@@ -165,29 +133,21 @@ To https://git.heroku.com/line-bot-sample-1220.git
  * [new branch]      master -> master
 </code></pre>
 
-[slide]
 # Line manage setting
 
-[slide]
-<img src="/line_manage_setting01.png" />
+<img src="line_manage_setting01.png" />
 
-[slide]
-<img src="/line_manage_setting02.png" />
+<img src="line_manage_setting02.png" />
 
-[slide]
-<img src="/line_manage_setting03.png" />
+<img src="line_manage_setting03.png" />
 
-[slide]
 # Heroku setting
 
-[slide]
-<img src="/heroku_env.png" />
+<img src="heroku_env.png" />
 
-[slide]
 ## QR Code
-<img src="/linebot_qrcode.png" />
+<img src="linebot_qrcode.png" />
 
-[slide]
 ## Reference
 * https://github.com/line/line-bot-sdk-python
 * https://github.com/twtrubiks/line-bot-tutorial

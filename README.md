@@ -1,5 +1,4 @@
 # 使用Python Flask 撰寫 Line Bot 
-<small style="vertical-align:middle;display:inline-block"><iframe src="http://ghbtns.com/github-btn.html?user=tonyyang924&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="20" style="width:170px;height:20px;  background-color: transparent;"></iframe></small>
 
 # 環境安裝
 

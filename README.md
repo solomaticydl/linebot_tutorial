@@ -11,7 +11,7 @@
 <pre><code class="markdown">pip3 install line-bot-sdk</code></pre>
 
 * Dependency
-<pre><code class="markdown">wget https://raw.githubusercontent.com/tonyyang924/mudhorse-line-bot/master/requirements.txt
+<pre><code class="markdown">wget https://raw.githubusercontent.com/solomaticydl/mudhorse-line-bot/master/requirements.txt
 pip install -r requirements.txt</code></pre>
 
 
@@ -88,8 +88,8 @@ if __name__ == "__main__":
 $ mkdir LineBotSample
 $ git init
 $ mvim app.py
-$ wget https://raw.githubusercontent.com/tonyyang924/mudhorse-line-bot/master/Procfile
-$ wget https://raw.githubusercontent.com/tonyyang924/mudhorse-line-bot/master/requirements.txt
+$ wget https://raw.githubusercontent.com/solomaticydl/mudhorse-line-bot/master/Procfile
+$ wget https://raw.githubusercontent.com/solomaticydl/mudhorse-line-bot/master/requirements.txt
 $ git add . 
 $ git commit -m "first commit"
 </code></pre>
